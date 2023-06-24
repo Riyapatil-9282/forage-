@@ -1,0 +1,32 @@
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class FinancialAdvisor {
+    @Id
+    @GeneratedValue
+    private Long advisorId;
+
+    // Other fields, annotations, constructors, getters, and setters
+    // ...
+}
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Client {
+    @Id
+    @GeneratedValue
+    private Long clientId;
+
+    @ManyToOne
+    private FinancialAdvisor advisor;
+
+    // Other fields, annotations, constructors, getters, and setters
+    // ...
+}
